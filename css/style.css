@@ -177,6 +177,9 @@ a.active {
     display: flex;
     justify-content: center;
 }
+.pogledaj-vise-dugme-container a {
+    text-decoration: none;
+}
 #pogledaj-jos p {
     color: #fff;
     font-size: 42px;
