@@ -10,10 +10,18 @@
 body {
     background-color: #28282B;
 }
+main {
+    margin-top: 117px !important;
+}
 #header {
-    background-color: #28282B;
+    background-color: #1a1a1af7;
     height: 113px;
     display: flex;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    z-index: 999;
+    border-bottom: 5px solid #d49e73;
 }
 .logo {
     padding-left: 25px;
@@ -62,9 +70,11 @@ a.active {
 .cleaner {
     clear: both;
 }
-#cart-icon {
-    margin-right: 15px;
-    margin-top: 30px;
+.cart-icon {
+    font-size: 32px;
+    color: white;
+    margin-right: 25px;
+    margin-top: 40px;
 }
 .slide-wrapper {
     position: relative;
@@ -108,7 +118,7 @@ a.active {
     height: 450px;
     width: 100%;
 }
-#text1 {
+#main-heading {
     justify-content: center;
     width: 100%;
     text-align: center;
@@ -121,39 +131,31 @@ a.active {
     margin-right: 700px;
     margin-bottom: 50px;
 }
-#text1 h2 {
+#main-heading h1 {
+    font-size: 64px;
+    margin-bottom: 50px;
+}
+#main-heading h2 {
     text-align: center;
-    font-size: 73px;
+    font-size: 36px;
 }
 #pogledaj-jos {
     text-align: center;
     margin-top: 50px;
 }
-#dugme {
-    padding: 13px 40px 13px 40px;
-    border-radius: 30px;
-    color: #fff;
-    background-color: #003300;
-    border: 2px solid transparent;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-}
-#dugme:hover {
-    transform: scale(1.1); 
-    background-color: #006600;
-}
-#dugme:active {
-    background-color: black;
-}
 .sat-lista {
-    height: 1000px;
     width: 100%;
     background-color: #28282B;
     display: flex;
-    justify-content: space-around;
+    flex-wrap: wrap;
+    justify-content: center;
     margin-top: 100px;
 }
 .sat {
-    width: 375px;
+    width: 400px;
+    margin-bottom: 100px;
+    margin-right: 20px;
+    margin-left: 20px;
 }
 .sat-naziv {
     display: flex;
@@ -161,6 +163,8 @@ a.active {
     align-items: center;
     margin-bottom: 30px;
     height: 55px;
+    color: #f1f1f1;
+    text-align: center;
 }
 .sat-naziv p {
     font-size: 24px;
@@ -171,6 +175,7 @@ a.active {
 }
 .pogledaj-vise-dugme {
     display: flex;
+    cursor: pointer;  
     margin-top: 50px;
     padding: 13px 40px 13px 40px;
     border-radius: 30px;
@@ -191,88 +196,54 @@ a.active {
 }
 
 /* Dugme 1 */
-#pogledaj-vise-dugme-1 {
-    color: #e6ccb3;
-    background-color: #003300;
+.pogledaj-vise-dugme-primary {
+    color: black;
+    background-color: #DAA14C;
     border: 2px solid transparent;
-    box-shadow: 0 0 5px rgba(0, 255, 0, 0.5); 
+    box-shadow: 0 0 5px #ff9900; 
     transition: all 0.3s ease;
 }
-#pogledaj-vise-dugme-1:hover {
-    background-color: #006600;
-    box-shadow: 0 0 15px 3px rgba(0, 255, 0, 1);
+.pogledaj-vise-dugme-primary:hover {
+    background-color: #fd9f11;
+    box-shadow: 0 0 15px 3px #ffae01;
 }
-#pogledaj-vise-dugme-1:active {
+.pogledaj-vise-dugme-primary:active {
     background-color: black;
 }    
-/* Dugme 2 */
-#pogledaj-vise-dugme-2 {
-    color: #ffcc00;
-    background-color: #e6f2ff;
-    border: 2px solid transparent;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden; 
-    transition: all 0.3s ease-in-out;
-}
-#pogledaj-vise-dugme-2:hover {
-    background-color: #ffcc00;
-    color: #ffffff;
-}
-#pogledaj-vise-dugme-2::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 10px;
-    height: 10px;
-    background: rgba(255, 255, 255, 0.5);
-    border-radius: 50%;
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 0;
-    transition: all 0.6s ease-out;
-}
-#pogledaj-vise-dugme-2:hover::after {
-    transform: translate(-50%, -50%) scale(15);
-    opacity: 0.1;
-}           
-#pogledaj-vise-dugme-2:active {
-    background-color: #fff;
-}
-/* Dugme 3 */
-#pogledaj-vise-dugme-3 {
-    color: #fff;
-    background-color: black;
+.pogledaj-vise-dugme-secondary {
+    color: black;
+    background-color: #DAA14C;
     border: 2px solid transparent;
     float: right;
     cursor: pointer;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease-in-out;
 }
-#pogledaj-vise-dugme-3:hover {
+.pogledaj-vise-dugme-secondary:hover {
     transform: translateY(-10px); 
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); 
 }
-/* Dugme 4 */
-#pogledaj-vise-dugme-4 {
-    color: #ffff00;
-    background-color: #00b300;
+.pogledaj-vise-dugme-black {
+    color: black;
+    background-color: #DAA14C;
     border: 2px solid transparent;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-    transition: all 0.3s ease-in-out;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1)
+    box-shadow: 0 0 5px #ff9900; 
+    transition: all 0.3s ease;
 }
-#pogledaj-vise-dugme-4:hover {
-    box-shadow: 0 0 20px #ffcc00, 0 0 30px #ffcc00, 0 0 40px #ffcc00;
+.pogledaj-vise-dugme-black:hover {
+    background-color: #fd9f11;
+    box-shadow: 0 0 15px 3px #ffae01;
+}
+.pogledaj-vise-dugme-black:active {
+    background-color: black;
 }
 .sat img {
-    width: 100%;
-    height: auto;
+    width: 400px;
+    height: 677px;
+    object-fit: cover;
     transition: transform 0.3s ease-in-out;
 }
-  .sat img:hover {
+.sat img:hover {
     transform: scale(1.05);
 }
 #pozadina-galerija {
@@ -280,7 +251,7 @@ a.active {
     width: 100%;
     background-color: #28282B;    
 }
-.zasto-mi {
+#zasto-mi-container h2 {
     color: #fff;
     font-size: 48px;
     font-weight: 700;
@@ -288,12 +259,12 @@ a.active {
     letter-spacing: -1px;
     margin-left: 240px;
 }
-.ispod-satova {
+#zasto-mi-container {
     width: 100%;
-    height: 400px;
     background-color: #28282B;
+    margin-top: 100px;
 }
-.ispod-satova img {
+#zasto-mi-container img {
     height: 90px;
     width: 90px;
     justify-content: center;
@@ -305,7 +276,7 @@ a.active {
 .ikonice {
     justify-content: space-around;
     display: flex;
-    margin-top: 190px;
+    margin-top: 100px;
     margin-left: 150px;
 }
 .partner-naslov {
@@ -398,15 +369,15 @@ a.active {
 .border-linija {
     border: 2px solid #fff;
     width: 100%;
-    margin-top: 200px;
     width: 90%;
-    margin-left: 90px;
+    margin: 0px auto;
 }
-#ispod-linije {
+#blog-container {
     height: 800px;
     background-color: #28282B;
     padding: 0;
     margin: 0;
+    margin-top: 100px;
 }
 #blog {
     text-align: center;
@@ -533,7 +504,7 @@ a.active {
 #newsletterContent{
 	margin-left: 10px;
 }
-#newsletterContent p {
+#newsletterContent h3 {
 	font-size: 26px;
 	color:#fff;
 }
@@ -567,6 +538,7 @@ a.active {
 	margin: 20px auto;
 	text-align: center;
     color: #fff;
+    padding-top: 20px;
 }
 #contactWrapper{
 	width: 85%;
@@ -677,13 +649,17 @@ a.active {
 	padding: 10px 0px;
 }
 #aboutMain{
-	width: 80%;
+    padding-top: 1px;
+}
+#aboutMainContainer {
+    width: 80%;
 	box-sizing: border-box;
 	border: 3px solid #DAA14C;
 	margin: 50px auto;
 	padding: 40px 50px;
 	display: flex;
 	justify-content:space-between;
+    padding-top: 30px;
 }
 
 #profileImage{
@@ -723,7 +699,7 @@ a.active {
 
 /* ICONS */
 #biography h2 a{
-	color:#000;
+	color:white;
 }
 #biography h2 a:hover{
 	color:#DAA14C;
@@ -743,6 +719,7 @@ a.active {
 #galerija-naslov {
     width: 98%;
 	margin:35px auto;
+    padding-top: 20px;
 }
 #galerija-naslov h1 {
     text-align: center;
