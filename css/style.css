@@ -319,17 +319,17 @@ a.active {
     margin-top: 20px;
     text-align: center;
 }
-.ikonice img {
+#zasto-mi-container .ikonice img {
     position: relative;
     overflow: hidden; 
     transition: all 0.3s ease-in-out;
   }
   
-.ikonice img:hover {
-    background-color: #ffcc00;
+#zasto-mi-container .ikonice img:hover {
+    background-color: #d49e73;
     color: #ffffff;
 }
-.ikonice img::after {
+#zasto-mi-container .ikonice img::after {
     content: '';
     position: absolute;
     top: 50%;
@@ -342,7 +342,7 @@ a.active {
     opacity: 0;
     transition: all 0.6s ease-out;
 }
-.ikonice img:hover::after {
+#zasto-mi-container .ikonice img:hover::after {
     transform: translate(-50%, -50%) scale(15);
     opacity: 0.1;
 }
